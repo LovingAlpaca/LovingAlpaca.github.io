@@ -111,11 +111,11 @@
 
       searchWithDoiButton.addEventListener("click", async (event) => {
         event.preventDefault();
-        const searchTerm = searchInput.value + " doi";
+        const searchTerm = searchInput.value;
         const response = await fetch(`${API_ENDPOINT}?q=${searchTerm}&target=en&key=${API_KEY}`);
         const data = await response.json();
         const translatedText = data.data.translations[0].translatedText;
-        window.location.href = `https://www.google.com/search?q=${translatedText}`;
+        window.location.href = `https://www.google.com/search?q=${translatedText}+doi`;
       });
     </script>
   </body>
